@@ -1,0 +1,3 @@
+Admin,admin,admin123,
+Vendedor,vendedor,vendedor123,
+Invitado,invitado,invitado123,
