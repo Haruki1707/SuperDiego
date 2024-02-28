@@ -18,11 +18,11 @@ object ProductStore: FileBase() {
     }
 
     override fun lineToModel(data: List<String>): Model {
-        return Product(data[0], data[1].toInt(), data[2].toDouble())
+        return Product(data[0], data[1].toInt(), data[2], data[3].toDouble())
     }
 
     override fun modelToLine(model: Model): String {
         val product = model as Product
-        return "${product.name},${product.quantity},${product.price}\n"
+        return "${product.name},${product.quantity},${product.unit},${product.price}\n"
     }
 }

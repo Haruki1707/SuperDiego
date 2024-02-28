@@ -27,7 +27,7 @@ abstract class FileBase {
 
     abstract fun lineToModel(data: List<String>): Model
 
-    private fun saveFile() {
+    fun saveFile() {
         file.writeText("")
         data.forEach {
             file.appendText(modelToLine(it))
