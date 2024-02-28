@@ -8,7 +8,7 @@ import java.util.Locale
  * Models.User class represents a user in the system.
  * It contains a name, role and password.
  */
-data class User(val username: String, val role: String, var password: String): Model {
+data class User(val username: String, val role: String, var password: String): Model() {
     fun roleAsEnum(): Role {
         // Check if the role is valid, if not return INVITADO
         return try {

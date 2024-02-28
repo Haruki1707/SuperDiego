@@ -8,7 +8,9 @@ import stores.UserStore
  * It also stores the current user.
  */
 object Auth {
-    var user: User? = null
+    val user: User?
+        get() = userId?.let { UserStore.users.find { user -> user.id == it } }
+    private var userId: Int? = null
     private var alreadyAttempted: Boolean = false
 
     fun tryLogin() {
@@ -26,12 +28,12 @@ object Auth {
 
     fun logout() {
         alreadyAttempted = false
-        user = null
+        userId = null
     }
 
     private fun checkCredentials(username: String, password: String): Boolean {
         UserStore.users.find { it.username == username && it.password == password }?.let {
-            user = it
+            userId = it.id
             alreadyAttempted = false
             return true
         }

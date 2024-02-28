@@ -21,7 +21,9 @@ abstract class FileBase {
 
     private fun readFile() {
         file.forEachLine {
-            this.data.add(lineToModel(it.split(",")))
+            val model = lineToModel(it.split(","))
+            model.id = data.size + 1
+            this.data.add(model)
         }
     }
 
