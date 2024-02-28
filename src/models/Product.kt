@@ -7,6 +7,6 @@ import helpers.Model
  * It contains a name, quantity and price.
  */
 
-data class Product(val name: String, val quantity: Int, val unit: String, val price: Double): Model() {
+data class Product(val name: String, var quantity: Int, val unit: String, var price: Double): Model() {
 
 }
