@@ -3,4 +3,6 @@ package helpers
 /**
  * Interface for models to be compatible with stores
  */
-interface Model {}
+ abstract class Model {
+    var id: Int = 0
+}
