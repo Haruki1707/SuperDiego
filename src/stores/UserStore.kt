@@ -10,7 +10,7 @@ import java.io.File
  * It is responsible for handling operations related to User data.
  */
 object UserStore: FileBase() {
-    override val file = File("C:\\GitHub\\SuperDiego\\resources\\users.txt")
+    override val file = File("resources/users.txt")
     val users = data as ArrayList<User>
 
     init {
@@ -23,6 +23,6 @@ object UserStore: FileBase() {
 
     override fun modelToLine(model: Model): String {
         val user = model as User
-        return "${user.username},${user.role},${user.password}\n"
+        return "${user.username},${user.role},${user.password}"
     }
 }

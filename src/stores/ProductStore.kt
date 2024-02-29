@@ -10,7 +10,7 @@ import java.io.File
  * It is responsible for handling operations related to Product data.
  */
 object ProductStore: FileBase() {
-    override val file = File("C:\\GitHub\\SuperDiego\\resources\\products.txt")
+    override val file = File("resources/products.txt")
     val products = data as ArrayList<Product>
 
     init {
@@ -23,6 +23,6 @@ object ProductStore: FileBase() {
 
     override fun modelToLine(model: Model): String {
         val product = model as Product
-        return "${product.name},${product.quantity},${product.unit},${product.price}\n"
+        return "${product.name},${product.quantity},${product.unit},${product.price}"
     }
 }

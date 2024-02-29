@@ -5,9 +5,10 @@ import stores.ProductStore
 
 import java.io.File
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 object SaleController {
-    val items: ArrayList<String> = ArrayList()
+    private val items: ArrayList<String> = ArrayList()
 
     fun sale() {
         printInventory()
@@ -24,7 +25,7 @@ object SaleController {
                     if (product.quantity >= it.toInt()) {
                         product.quantity -= it.toInt()
 
-                        lineItem = "${product.name},${product.quantity},${product.unit},${product.price}, ${product.price*product.quantity}"
+                        lineItem = "${product.id}\t${product.name}\t${product.quantity}\t${product.unit}\t${product.price}\t${ String.format("%.2f", product.price*product.quantity)}"
                         items.add(lineItem)
                     }
                 } ?: println("No existe un producto con el ID ${productId}")
@@ -39,9 +40,9 @@ object SaleController {
     }
 
     private fun printInventory() {
-        println("Nombre del producto | Unidades disponibles | Precio por unidad ")
+        println("Nombre del producto \t Unidades disponibles \t Precio por unidad ")
         ProductStore.products.forEach { p ->
-            println("${p.id}. ${p.name} | ${p.quantity} ${p.unit} | $${p.price}")
+            println("${p.id}. ${p.name} \t\t ${p.quantity} ${p.unit} \t\t $${p.price}")
         }
 
         println("Ingrese los productos y cantidad que desea comprar, separados por comas")
@@ -52,7 +53,12 @@ object SaleController {
     }
 
     private fun generateTicket() {
-        val ticket = File("Factura ${LocalDateTime.now().toString()}")
-        ticket.appendText(items.toString())
+        val date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH.mm.ss"))
+        val ticket = File("resources/tickets/Factura ${date}.txt")
+
+        ticket.appendText("FACTURA DIGITAL - SuperDiego\nFecha ${date} \n\n")
+        ticket.appendText("Cód\tProducto\t\tCantidad\t\tPrecio unitario\t\tTotal\n")
+        items.forEach { item -> ticket.appendText(item+"\n") }
+        ticket.createNewFile()
     }
 }

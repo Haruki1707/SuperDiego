@@ -32,7 +32,7 @@ abstract class FileBase {
     fun saveFile() {
         file.writeText("")
         data.forEach {
-            file.appendText(modelToLine(it))
+            file.appendText(modelToLine(it)+"\n")
         }
     }
 
