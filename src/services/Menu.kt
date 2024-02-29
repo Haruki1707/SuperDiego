@@ -40,18 +40,22 @@ object Menu {
     }
 
     fun executeOption(option: String) {
+        var index = 0
+
         try {
-            val index = calculateOption(option.toInt())
-            if (index == -1) {
-                Auth.logout()
-                println("Sesión cerrada. Presione enter para continuar.")
-                readln()
-            } else {
-                options[index].second()
-            }
+            index = calculateOption(option.toInt())
         } catch (e: Exception) {
             println("Opción inválida. Presione enter para continuar.")
             readln()
+            return
+        }
+
+        if (index == -1) {
+            Auth.logout()
+            println("Sesión cerrada. Presione enter para continuar.")
+            readln()
+        } else {
+            options[index].second()
         }
     }
 }
