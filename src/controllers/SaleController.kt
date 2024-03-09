@@ -85,16 +85,16 @@ object SaleController {
             ticket.appendText("Total de factura: $${String.format("%.2f", total)}\n")
 
             println("\nDescuento 3%: $${String.format("%.2f", discount)}")
-            println("Subtotal: $${String.format("%.2f", subtotal)}")
+            println("\nSubtotal: $${String.format("%.2f", subtotal)}")
             println("Total de factura: $${String.format("%.2f", total)}")
         } else {
             ticket.appendText("\nTotal de factura: $${String.format("%.2f", subtotal)}")
-            println("Total de factura: $${String.format("%.2f", subtotal)}")
+            println("\nTotal de factura: $${String.format("%.2f", subtotal)}")
         }
 
         ticket.createNewFile()
 
         println(footer)
-        println("\nVenta realizada con éxito. Se ha generado la factura ${ticket.name}")
+        println("Venta realizada con éxito. \nSe ha generado la factura ${ticket.name}")
     }
 }

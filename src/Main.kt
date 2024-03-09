@@ -10,7 +10,6 @@ fun main() {
     // The third parameter is the role required to execute the option
 
     Menu.addOption("Consultar inventario", InventoryController::search, Role.INVITADO)
-
     Menu.addOption("Realizar venta", SaleController::sale, Role.VENDEDOR)
 
     runApp()
