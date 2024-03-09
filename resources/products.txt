@@ -1,15 +1,15 @@
 Leche entera,10,galones,4.0
 Pan blanco,8,paquetes de 16 rebanadas,2.5
-Huevos,14,docenas,3.0
-Manzanas,49,unidades,0.9
-Pollo,18,libras,3.5
+Huevos felices,14,docenas,3.0
+Manzanas rojas,49,unidades,0.9
+Pollo pechuga,18,libras,3.5
 Arroz blanco,25,libras,0.9
-Pasta,12,paquetes de 16 onzas,1.5
+Pasta francesa,12,paquetes de 16 onzas,1.5
 Yogur natural,29,unidades,0.6
-Papas,35,libras,0.6
+Papas calidad,35,libras,0.6
 Zanahorias,5,libras,0.9
 Queso cheddar,8,libras,5.0
 Tomates en lata,20,latas de 14.5 onzas,0.7
-Cereal de maíz,9,cajas de 12 onzas,3.0
+Cereal de maíz,8,cajas de 12 onzas,3.0
 Frijoles enlatados,12,latas de 15 onzas,0.9
 Aceite de oliva,0,botellas de 16 onzas,6.0
