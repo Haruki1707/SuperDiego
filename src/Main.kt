@@ -1,5 +1,6 @@
 import controllers.SaleController
 import controllers.InventoryController
+import controllers.UserController
 import helpers.Role
 import services.Menu
 
@@ -11,7 +12,7 @@ fun main() {
 
     Menu.addOption("Consultar inventario", InventoryController::search, Role.INVITADO)
     Menu.addOption("Realizar venta", SaleController::sale, Role.VENDEDOR)
+    Menu.addOption("Cambiar contraseña", UserController::changePassword, Role.ADMIN)
 
     runApp()
-
 }
